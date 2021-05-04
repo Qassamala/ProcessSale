@@ -22,10 +22,10 @@ public class Receipt {
     /**
      * Creates a receipt with required info when the sale has been completed. Sets
      * values with given parameters but also calculates and sets values.
-     * @param sale
-     * @param store
-     * @param amountPaid
-     * @param change 
+     * @param sale The sale that is processed at a retail store.
+     * @param store The store processing the sale.
+     * @param amountPaid The payment provided to complete the sale.
+     * @param change The change to be given to the customer.
      */
     public Receipt(Sale sale, Store store, double amountPaid, double change){
         timeOfSale = LocalTime.now();
