@@ -33,6 +33,13 @@ public class Printer {
             System.out.println(printItem.toString());
         }
         
+        System.out.println("Total: " + receipt.getSale().getRunningTotal());
+        
+        System.out.println("VAT of entire sale: " + receipt.getVATOfEntireSale());
+        
+        System.out.println("Amount paid: " + receipt.getAmountPaid());
+        System.out.println("Change: " + receipt.getChange());
+        
         
     }
 

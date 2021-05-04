@@ -86,7 +86,7 @@ public class Controller {
         accounting.bookSale(sale);
         inventory.updateInventory(sale);
         register.increaseRegisterAmount(sale.getRunningTotal());
-        Receipt receipt = new Receipt(sale, store);
+        Receipt receipt = new Receipt(sale, store, amount, change);
         printer.print(receipt);
         
         return change;

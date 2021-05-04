@@ -15,11 +15,25 @@ public class Receipt {
     private Store store;
     private List<PrintItem> printItems = new ArrayList<PrintItem>();
     private Sale sale;
+    private double amountPaid;
+    private double change;
+    private double VATSale;
     
-    public Receipt(Sale sale, Store store){
+    /**
+     * Creates a receipt with required info when the sale has been completed. Sets
+     * values with given parameters but also calculates and sets values.
+     * @param sale
+     * @param store
+     * @param amountPaid
+     * @param change 
+     */
+    public Receipt(Sale sale, Store store, double amountPaid, double change){
         timeOfSale = LocalTime.now();
         this.store = store;
         this.sale = sale;
+        this.amountPaid = amountPaid;
+        this.change = change;
+        calculateVATOfEntireSale();
         createPrintItems();
     }
     
@@ -36,9 +50,29 @@ public class Receipt {
     public Sale getSale(){
         return this.sale;
     }
+
+    public double getAmountPaid(){
+        return this.amountPaid;
+    }
+    
+    public double getChange(){
+        return this.change;
+    }
     
     public List<PrintItem> getPrintItems(){
         return this.printItems;
+    }
+    
+    public double getVATOfEntireSale(){
+        return this.VATSale;
+    }
+    
+    private void calculateVATOfEntireSale()
+    {
+        for(Item item : this.sale.getItems())
+        {
+            this.VATSale += (item.getPrice() * item.getVATRate());
+        }
     }
     
     private void createPrintItems()
