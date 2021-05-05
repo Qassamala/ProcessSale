@@ -1,31 +1,30 @@
 package se.kth.iv1350.processSale.model;
 
+import se.kth.iv1350.processSale.integration.Item;
+
 /**
  *  This class represents an entry on a receipt that should contain
- *  Name, aggregated quantity and price for each item of a sale.
+ *  Name, aggregated quantity and price for each item of a sale.This is created
+ *  by the Receipt class
  * @author abdig
  */
 public class PrintItem {
-        private int identifier;
+        private Item item;
         private int quantity;
-        private String name;
-        private double price;
 
-        protected PrintItem(int identifier, String name, double price) {
-            this.identifier = identifier;
+        protected PrintItem(Item item) {
+            this.item = item;
             this.quantity = 1;
-            this.name = name;
-            this.price = price;
         }
         
         public int getIdentifier()
         {
-            return this.identifier;
+            return this.item.getIdentifier();
         }
 
         public double getPrice()
         {
-            return this.price;
+            return this.item.getPrice();
         }
         
         /**
@@ -43,7 +42,7 @@ public class PrintItem {
          * @return The printItems values that should be printed
          */
         public String toString() { 
-            return "Name: '" + this.name + "', Quantity: '" + this.quantity + "', Price: '" + this.price + "'";
+            return "Name: '" + this.item.getName() + "', Quantity: '" + this.quantity + "', Price: '" + this.item.getPrice() + "'";
         } 
         
     }
