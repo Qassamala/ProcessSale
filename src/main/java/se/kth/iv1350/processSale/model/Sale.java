@@ -67,14 +67,13 @@ public class Sale {
         this.runningTotal += priceIncludingVAT;
     }
 
-    // Need to check for payment illegal payment amount. must be greater than..
     /**
      * Returns the difference of the amount paid and the sale's total amount. 
      * @param amount The amount that the Cashier entered as customer payment.
      * @return The difference between amount paid and the sale's final total
      * amount.
      */
-    public double processPayment(double amount) {
+    public double calculateChange(double amount) {
         return amount - this.getRunningTotal();
     }
 }

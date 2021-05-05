@@ -2,7 +2,7 @@ package se.kth.iv1350.processSale.model;
 
 /**
  * Represents the physical register that contains an amount that is increased 
- * by the amount of a finished sale.
+ * by the amount of a finished sale. Only created once on system startup.
  * @author abdig
  */
 public class Register {

@@ -1,7 +1,7 @@
 package se.kth.iv1350.processSale.integration;
 
 /**
- *  Represents an item that in a retail store
+ *  Represents an item that can be bought in a retail store
  * @author abdig
  */
 public class Item {
@@ -12,7 +12,7 @@ public class Item {
     private String description;
     
     /**
-     * Should this be private? Creates an item that represents an item in a
+     * Creates an item that represents an item in a
      * retail store.
      * @param identifier    A type of item has an int identifier, and it is unique to
      * the type of item, such as standard milk.

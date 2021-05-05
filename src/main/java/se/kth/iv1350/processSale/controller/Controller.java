@@ -87,7 +87,7 @@ public class Controller {
      * @return The change to be taken from the register and given to the customer.
      */
     public double enterAmountPaid(double amount) {
-        double change = sale.processPayment(amount);
+        double change = sale.calculateChange(amount);
         
         updateExternalSystems();
         
