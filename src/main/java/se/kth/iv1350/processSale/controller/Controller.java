@@ -68,7 +68,7 @@ public class Controller {
     
     /**
      * Can be rewritten, return sale object or just primitive value?
-     * @return 
+     * @return Is the current total value of the sale.
      */
     public double getSaleDetails(){
         
@@ -79,17 +79,34 @@ public class Controller {
         return this.getSaleDetails();
     } 
 
+    /**
+     * Is called when Cashier enters payment. This will calculate change to be given back 
+     * to customer as well as update external systems and create a receipt that will
+     * be sent to the external system Printer for printing.
+     * @param amount the amount that the cashier entered as payment.
+     * @return The change to be taken from the register and given to the customer.
+     */
     public double enterAmountPaid(double amount) {
         double change = sale.processPayment(amount);
-        // Log completed sale???
         
+        updateExternalSystems();
+        
+        createAndPrintReceipt(amount, change);
+        
+        return change;
+    }
+    
+    private void updateExternalSystems()
+    {
         accounting.bookSale(sale);
         inventory.updateInventory(sale);
         register.increaseRegisterAmount(sale.getRunningTotal());
+    }
+    
+    private void createAndPrintReceipt(double amount, double change)
+    {
         Receipt receipt = new Receipt(sale, store, amount, change);
         printer.print(receipt);
-        
-        return change;
     }
     
     

@@ -100,7 +100,7 @@ public class Receipt {
                 }
             }
             else
-                printItems.add(new PrintItem(identifier, items.get(i).getName(), items.get(i).getPrice() ));
+                printItems.add(new PrintItem(items.get(i)));
         }
     }
     

@@ -20,16 +20,6 @@ public class Inventory {
         addItemsToInventory();
     }
     
-    /**
-     * Searches the inventory for the provided identifier and returns and item if found,
-     * else null.
-     * @param identifier Matches with a type of item, such as standard milk.
-     */
-    private void getItemDetails(int identifier){
-        //Search inventory for item here
-         
-    }
-    
     private void addItemsToInventory() {
         items.add(new Item(1, 5, 0.1, "Standard Milk", "Vitamin D Enriched Milk."));
         items.add(new Item(2, 7.2, 0.1, "Bread", "Whole Wheat Bread."));

@@ -40,6 +40,8 @@ public class Printer {
         System.out.println("Amount paid: " + receipt.getAmountPaid());
         System.out.println("Change: " + receipt.getChange());
         
+        System.out.println("End of receipt...");
+        
         
     }
 

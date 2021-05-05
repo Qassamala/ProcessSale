@@ -39,7 +39,7 @@ public class View {
         
         System.out.println("Entering amount 30 as payment...");
         double change = controller.enterAmountPaid(30);
-        System.out.println("Change to give customer: " + change);
+        System.out.println("Change to give to customer: " + change);
 
     }
     
