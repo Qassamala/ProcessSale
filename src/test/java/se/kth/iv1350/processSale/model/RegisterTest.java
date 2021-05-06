@@ -18,9 +18,6 @@ import se.kth.iv1350.processSale.view.View;
 public class RegisterTest {
     private Register instanceToTest;
     
-    public RegisterTest() {
-    }
-    
     @BeforeEach
     public void setUp() {
         instanceToTest = new Register();

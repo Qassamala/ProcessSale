@@ -20,6 +20,10 @@ public class Inventory {
         addItemsToInventory();
     }
     
+    public List<Item> getItems(){
+        return this.items;
+    }
+    
     private void addItemsToInventory() {
         items.add(new Item(1, 5, 0.1, "Standard Milk", "Vitamin D Enriched Milk."));
         items.add(new Item(2, 7.2, 0.1, "Bread", "Whole Wheat Bread."));
