@@ -37,7 +37,7 @@ public class InventoryTest {
         
         identifier = 1; // does exist
         result = instanceToTest.checkIfItemInInventory(identifier);
-        assertNotNull(result, "Received null but expected and object");
+        assertNotNull(result, "Received null but expected an object");
     }
     
 }

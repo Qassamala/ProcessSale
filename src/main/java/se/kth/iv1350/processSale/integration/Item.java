@@ -1,7 +1,7 @@
 package se.kth.iv1350.processSale.integration;
 
 /**
- *  Represents an item that can be bought in a retail store.
+ *  Represents an item that can be bought in a retail store
  * @author abdig
  */
 public class Item {
