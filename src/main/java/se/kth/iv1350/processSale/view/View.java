@@ -1,5 +1,6 @@
 package se.kth.iv1350.processSale.view;
 
+import java.text.DecimalFormat;
 import se.kth.iv1350.processSale.controller.Controller;
 import se.kth.iv1350.processSale.integration.Item;
 import se.kth.iv1350.processSale.model.Sale;
@@ -20,6 +21,7 @@ public class View {
     public View (Controller controller) {
         this.controller = controller;
     }
+    DecimalFormat df = new DecimalFormat("###.###"); // used to round double
     
     /**
      * Performs a fake sale, by calling all system operations in the controller.
@@ -34,12 +36,14 @@ public class View {
         addItemToSale(4);
         addItemToSale(3);
         
+        
+      
         System.out.println("Ending sale...");
-        System.out.println("Total sum for payment: " + controller.endSale());
+        System.out.println("Total sum for payment: " + df.format(controller.endSale()));
         
         System.out.println("Entering amount 30 as payment...");
         double change = controller.enterAmountPaid(30);
-        System.out.println("Change to give to customer: " + change);
+        System.out.println("Change to give to customer: " + df.format(change));
 
     }
     
@@ -52,8 +56,8 @@ public class View {
         else
         {
             System.out.println("Item description: " + item.getDescription());
-            System.out.println("Item price: " + item.getPrice());;
-            System.out.println("Running Total is: " + controller.getSaleDetails());
+            System.out.println("Item price (incl VAT): " + df.format(item.getPrice()* (1 + item.getVATRate())));
+            System.out.println("Running Total is: " + df.format(controller.getSaleDetails()));
         }
     }
 }
