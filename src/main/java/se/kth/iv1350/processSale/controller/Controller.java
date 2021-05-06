@@ -67,8 +67,8 @@ public class Controller {
     }
     
     /**
-     * Can be rewritten, return sale object or just primitive value?
-     * @return Is the current total value of the sale.
+     * Returns the sale's running Total.
+     * @return Is the current total amount of the sale.
      */
     public double getSaleDetails(){
         
